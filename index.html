@@ -4,101 +4,136 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Walk-to-Earn Harlem | Proposal Website</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --blue-1: #5aa0f2;
-      --blue-2: #4d97ef;
-      --blue-3: #3b88e8;
-      --line: rgba(255,255,255,0.18);
-      --text-light: rgba(255,255,255,0.82);
-      --text-dark: #7d7d7d;
-      --text-body: #9b9b9b;
-      --section-bg: #f7f7f7;
-      --border: #e5e5e5;
-      --btn-border: rgba(255,255,255,0.32);
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Source Sans 3', sans-serif;
       font-weight: 300;
-      color: var(--text-body);
+      color: #8e8e8e;
       background: #fff;
       line-height: 1.75;
     }
 
-    h1, h2, h3 {
-      margin: 0 0 1rem 0;
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      color: var(--text-dark);
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: dotted 1px rgba(144, 144, 144, 0.5);
+      transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    p { margin: 0 0 1.25rem 0; }
-    a { color: inherit; text-decoration: none; }
+    a:hover {
+      color: #4696e5;
+      border-bottom-color: transparent;
+    }
 
-    .hero {
+    h1, h2, h3, h4 {
+      margin: 0 0 1rem 0;
+      font-weight: 300;
+      line-height: 1.35;
+      color: #666;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 1.2rem 0;
+      font-size: 1.15rem;
+    }
+
+    .wrapper {
+      width: 100%;
+    }
+
+    .container {
+      width: min(72rem, calc(100% - 4rem));
+      margin: 0 auto;
+    }
+
+    .major {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .major h2 {
+      font-size: clamp(2.35rem, 4vw, 3.75rem);
+      max-width: 16em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .major p {
+      max-width: 44rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .major::after {
+      content: '';
+      display: block;
+      width: 7rem;
+      height: 2px;
+      background: #e6e6e6;
+      margin: 2rem auto 0;
+    }
+
+    #header {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4rem 2rem;
-      overflow: hidden;
       position: relative;
-      background:
-        repeating-linear-gradient(
-          135deg,
-          rgba(255,255,255,0.08) 0px,
-          rgba(255,255,255,0.08) 2px,
-          transparent 2px,
-          transparent 40px
-        ),
-        repeating-linear-gradient(
-          135deg,
-          rgba(255,255,255,0.05) 0px,
-          rgba(255,255,255,0.05) 1px,
-          transparent 1px,
-          transparent 60px
-        ),
-        linear-gradient(135deg, var(--blue-1), var(--blue-2) 48%, var(--blue-3));
-      color: white;
+      overflow: hidden;
+      background-color: #4696e5;
+      background-image:
+        linear-gradient(45deg, rgba(255,255,255,0.09) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0.09) 75%, transparent 75%, transparent),
+        linear-gradient(45deg, rgba(255,255,255,0.045) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.045) 50%, rgba(255,255,255,0.045) 75%, transparent 75%, transparent),
+        linear-gradient(135deg, #4ba3f1 0%, #4696e5 45%, #418adf 100%);
+      background-size: 160px 160px, 320px 320px, auto;
+      background-position: 0 0, 0 0, center;
+      color: rgba(255,255,255,0.85);
+      padding: 4rem 0;
     }
 
-    .hero-inner {
-      width: min(1180px, 100%);
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+    #header .inner {
+      width: min(74rem, calc(100% - 4rem));
+      display: flex;
       align-items: center;
-      gap: 2rem;
+      justify-content: space-between;
+      gap: 4rem;
     }
 
-    .hero-copy {
+    #header .content {
+      flex: 1 1 58%;
       text-align: right;
-      padding-right: 1.5rem;
     }
 
-    .hero h1 {
-      color: white;
-      font-size: clamp(3.4rem, 6vw, 5.3rem);
+    #header h1 {
+      color: #fff;
+      font-size: clamp(4rem, 7vw, 5.8rem);
       font-weight: 600;
       margin-bottom: 1.2rem;
     }
 
-    .hero .subtitle {
-      font-size: clamp(1.35rem, 2vw, 2.1rem);
-      color: var(--text-light);
+    #header p {
+      color: rgba(255,255,255,0.78);
+      font-size: clamp(1.5rem, 2.2vw, 2.35rem);
       line-height: 1.35;
-      max-width: 640px;
       margin-left: auto;
-      margin-bottom: 2rem;
+      max-width: 34rem;
     }
 
-    .button-row {
+    .actions {
+      list-style: none;
+      padding: 0;
+      margin: 2.25rem 0 0 0;
       display: flex;
       justify-content: flex-end;
       gap: 1rem;
@@ -106,560 +141,619 @@
     }
 
     .button {
-      min-width: 192px;
-      height: 60px;
-      border-radius: 8px;
-      border: 1px solid var(--btn-border);
+      appearance: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.75rem;
-      font-size: 1.5rem;
+      min-width: 12rem;
+      height: 3.75rem;
+      padding: 0 1.875rem;
+      border-radius: 6px;
+      font-size: 1.45rem;
       font-weight: 600;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      border: solid 1px rgba(255,255,255,0.35);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+      border-bottom: none;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
     }
 
     .button.primary {
-      background: white;
-      color: var(--blue-3);
-      border-color: white;
+      background: #fff;
+      color: #4696e5;
+      border-color: #fff;
     }
 
     .button.secondary {
-      color: white;
       background: transparent;
+      color: #fff;
     }
 
-    .button:hover { transform: translateY(-1px); }
-
-    .phone-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .phone {
-      width: min(340px, 72vw);
-      aspect-ratio: 0.53 / 1;
-      border: 2px solid rgba(255,255,255,0.22);
-      border-radius: 30px;
+    .phone-shell {
+      flex: 0 0 18rem;
+      width: 18rem;
+      height: 34rem;
+      border: solid 2px rgba(255,255,255,0.24);
+      border-radius: 2.1rem;
       position: relative;
-      padding: 3rem 0.9rem 4.2rem;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+      padding: 3rem 0.85rem 4rem;
     }
 
-    .phone::before {
-      content: "";
+    .phone-shell::before {
+      content: '';
       position: absolute;
-      top: 1.1rem;
+      top: 1.15rem;
       left: 50%;
       transform: translateX(-50%);
-      width: 56px;
-      height: 5px;
+      width: 3.1rem;
+      height: 0.28rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.22);
     }
 
-    .phone::after {
-      content: "";
+    .phone-shell::after {
+      content: '';
       position: absolute;
-      bottom: 1rem;
+      bottom: 0.95rem;
       left: 50%;
       transform: translateX(-50%);
-      width: 52px;
-      height: 52px;
+      width: 2.95rem;
+      height: 2.95rem;
       border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.22);
+      border: solid 2px rgba(255,255,255,0.22);
     }
 
     .phone-screen {
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, #1e3c5a, #12273d);
+      background: linear-gradient(180deg, #f3f8fe 0%, #dbe9f9 100%);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 1rem;
+      color: #4b6b89;
+      border-top: solid 1px rgba(255,255,255,0.18);
+    }
+
+    .app-top {
+      background: linear-gradient(180deg, #6ab0f1 0%, #529de8 100%);
       color: white;
-      font-size: 0.9rem;
+      padding: 1rem;
     }
 
-    .phone-card {
-      width: 100%;
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      padding: 0.75rem;
-      font-size: 0.85rem;
+    .app-top .mini {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.82;
+      margin-bottom: 0.4rem;
     }
 
-    .phone-card strong {
+    .app-top strong {
       display: block;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .app-map {
+      margin: 0.9rem;
+      padding: 0.9rem;
+      border-radius: 0.9rem;
+      background: white;
+      box-shadow: 0 0.4rem 1.2rem rgba(73, 115, 159, 0.08);
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .route-box {
+      height: 7.8rem;
+      border-radius: 0.75rem;
+      background:
+        radial-gradient(circle at 20% 25%, rgba(70,150,229,0.22) 0 8px, transparent 8px),
+        radial-gradient(circle at 75% 70%, rgba(70,150,229,0.22) 0 8px, transparent 8px),
+        linear-gradient(135deg, rgba(70,150,229,0.14), rgba(70,150,229,0.04));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .route-line {
+      position: absolute;
+      inset: 1.1rem 1rem auto 1rem;
+      height: 4.2rem;
+      border: dashed 3px #4696e5;
+      border-color: #4696e5 transparent transparent #4696e5;
+      border-radius: 2rem 0 0 0;
+      transform: skewY(-8deg);
+    }
+
+    .dot, .qr {
+      position: absolute;
+      width: 0.95rem;
+      height: 0.95rem;
+      border-radius: 50%;
+      background: #4696e5;
+    }
+
+    .dot { top: 1rem; left: 1rem; }
+    .qr {
+      bottom: 1rem;
+      right: 1rem;
+      width: 1.35rem;
+      height: 1.35rem;
+      border-radius: 0.2rem;
+      box-shadow: inset 0 0 0 3px white;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+    }
+
+    .stat {
+      background: #eef5fc;
+      border-radius: 0.75rem;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.82rem;
+    }
+
+    .stat strong {
+      display: block;
+      color: #53779c;
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .reward-bar {
+      margin: 0 0.9rem 0.9rem;
+      background: #ffffff;
+      border-radius: 0.85rem;
+      padding: 0.85rem 0.95rem;
+      box-shadow: 0 0.4rem 1.2rem rgba(73, 115, 159, 0.08);
+      font-size: 0.82rem;
+    }
+
+    .reward-bar strong {
+      display: block;
+      color: #53779c;
       font-weight: 600;
       margin-bottom: 0.25rem;
     }
 
-    .phone-card span {
-      display: block;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.82);
-      line-height: 1.45;
+    section.panel {
+      padding: 6rem 0;
+      border-top: solid 1px #e6e6e6;
     }
 
-    .section {
-      padding: 6.5rem 2rem;
-      border-top: 1px solid var(--border);
+    section.panel.alt {
+      background: #f7f7f7;
     }
 
-    .section.alt {
-      background: var(--section-bg);
-    }
-
-    .container {
-      width: min(1040px, 100%);
-      margin: 0 auto;
-    }
-
-    .center-intro {
-      text-align: center;
-      margin-bottom: 4.5rem;
-    }
-
-    .center-intro h2 {
-      font-size: clamp(2.4rem, 4vw, 3.5rem);
-      line-height: 1.25;
-      max-width: 900px;
-      margin: 0 auto 1.25rem;
-    }
-
-    .center-intro p {
-      max-width: 780px;
-      margin: 0.75rem auto 0;
-      font-size: 1.15rem;
-    }
-
-    .divider {
-      width: 110px;
-      height: 2px;
-      background: var(--border);
-      margin: 1.8rem auto 2rem;
-    }
-
-    .icon-row {
+    .icons {
+      list-style: none;
+      padding: 0;
+      margin: 2.5rem 0 0 0;
       display: flex;
-      justify-content: center;
-      gap: 4rem;
-      flex-wrap: wrap;
-      color: #d9d9d9;
-      font-size: 3.25rem;
-      margin-top: 2rem;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 290px 1fr;
-      gap: 4rem;
       align-items: center;
+      justify-content: center;
+      gap: 4.5rem;
+      color: #d7d7d7;
+      font-size: 3.2rem;
     }
 
-    .split.reverse {
-      grid-template-columns: 1fr 290px;
+    .spotlight {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
     }
 
-    .circle {
-      width: 290px;
-      height: 290px;
+    .spotlight.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .image.circle {
+      flex: 0 0 18rem;
+      width: 18rem;
+      height: 18rem;
       border-radius: 50%;
-      border: 5px solid #f0f0f0;
       overflow: hidden;
-      background: linear-gradient(135deg, #d9ecff, #b8d9ff);
+      border: solid 0.4rem #f0f0f0;
+      background: #ebf2fb;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #7aa9dd;
-      font-size: 1.15rem;
       text-align: center;
+      color: #7e9cbc;
       padding: 1.5rem;
-      margin: 0 auto;
+      font-size: 1.05rem;
     }
 
-    .circle.img-1 {
-      background: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80') center/cover;
+    .image.one {
+      background: linear-gradient(rgba(73,150,229,0.08), rgba(73,150,229,0.08)), url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80') center/cover;
     }
 
-    .circle.img-2 {
-      background: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=900&q=80') center/cover;
+    .image.two {
+      background: linear-gradient(rgba(73,150,229,0.08), rgba(73,150,229,0.08)), url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=900&q=80') center/cover;
     }
 
-    .content h3 {
-      font-size: 2.2rem;
+    .spotlight .text {
+      flex: 1 1 auto;
+    }
+
+    .spotlight h3 {
+      font-size: clamp(2rem, 3vw, 3rem);
       margin-bottom: 1rem;
     }
 
-    .content p, .content li {
-      font-size: 1.08rem;
-    }
-
-    .hr {
-      border-top: 1px solid var(--border);
-      margin: 3.6rem 0;
-    }
-
-    .feature-grid {
+    .features {
+      border-top: solid 1px #e6e6e6;
+      margin-top: 4rem;
+      padding-top: 3.2rem;
       display: grid;
-      grid-template-columns: repeat(3, minmax(180px, 1fr));
-      gap: 1.5rem 2rem;
-      color: #b6b6b6;
-      text-align: center;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem 2rem;
+      color: #b8b8b8;
     }
 
     .feature {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.85rem;
-      font-size: 1.15rem;
-      min-height: 42px;
+      gap: 0.8rem;
+      font-size: 1.2rem;
+      text-align: center;
     }
 
-    .feature span:first-child {
+    .feature .sym {
       font-size: 2rem;
+      color: #d7d7d7;
       line-height: 1;
-      color: #d4d4d4;
     }
 
-    .options {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 2rem;
     }
 
     .card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.75rem;
-      background: white;
-      min-height: 100%;
+      background: #fff;
+      border: solid 1px #e6e6e6;
+      border-radius: 0.4rem;
+      padding: 1.8rem;
     }
 
     .card h4 {
-      margin: 0 0 0.75rem;
-      color: var(--text-dark);
-      font-size: 1.45rem;
-      font-weight: 400;
+      font-size: 1.6rem;
+      color: #666;
+      margin-bottom: 0.75rem;
     }
 
-    .proposal-grid {
+    .proposal-images {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin: 2rem 0 0;
     }
 
-    .image-slot {
-      min-height: 260px;
-      border: 2px dashed #cfd8e3;
-      border-radius: 14px;
-      background: linear-gradient(180deg, #f9fbff, #eef4fb);
+    .placeholder {
+      min-height: 18rem;
+      border: dashed 2px #c7d3df;
+      border-radius: 0.9rem;
+      background: linear-gradient(180deg, #fbfdff 0%, #f0f5fb 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #86a1bf;
+      color: #88a0bb;
       padding: 1.5rem;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
     }
 
-    .cta {
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: clamp(2.3rem, 3.8vw, 3.4rem);
-      margin-bottom: 1rem;
-    }
-
-    .cta p {
-      max-width: 720px;
-      margin: 0 auto 2rem;
-      font-size: 1.15rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 3rem 2rem 4rem;
-      color: #b0b0b0;
-      font-size: 0.98rem;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-      color: #c2c2c2;
+      margin-top: 2rem;
+    }
+
+    .box {
+      background: #fff;
+      border: solid 1px #e6e6e6;
+      border-radius: 0.4rem;
+      padding: 1.7rem;
+    }
+
+    .box h4 {
+      font-size: 1.55rem;
+      margin-bottom: 0.8rem;
     }
 
     ul.clean {
-      margin: 0.75rem 0 0;
+      margin: 0;
       padding-left: 1.2rem;
     }
 
+    footer {
+      padding: 3rem 0 4rem;
+      text-align: center;
+      color: #b3b3b3;
+      font-size: 0.95rem;
+    }
+
+    footer .nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
     @media (max-width: 980px) {
-      .hero-inner,
-      .split,
-      .split.reverse,
-      .proposal-grid,
-      .options {
+      #header .inner,
+      .spotlight,
+      .spotlight.reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #header .content {
+        text-align: center;
+      }
+
+      #header p {
+        margin-right: auto;
+      }
+
+      .actions {
+        justify-content: center;
+      }
+
+      .features,
+      .cards,
+      .columns,
+      .proposal-images {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 736px) {
+      .container,
+      #header .inner {
+        width: min(100%, calc(100% - 2.5rem));
+      }
+
+      #header {
+        padding: 3rem 0;
+      }
+
+      section.panel {
+        padding: 4.5rem 0;
+      }
+
+      .icons {
+        gap: 2rem;
+        font-size: 2.5rem;
+      }
+
+      .features,
+      .cards,
+      .columns,
+      .proposal-images {
         grid-template-columns: 1fr;
       }
 
-      .hero-copy {
-        text-align: center;
-        padding-right: 0;
-        order: 2;
+      .phone-shell,
+      .image.circle {
+        width: 16rem;
+        height: 30rem;
       }
 
-      .phone-wrap { order: 1; }
-      .hero .subtitle { margin-left: auto; margin-right: auto; }
-      .button-row { justify-content: center; }
-      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 640px) {
-      .hero { padding: 3rem 1.25rem; }
-      .section { padding: 4.5rem 1.25rem; }
-      .feature-grid { grid-template-columns: 1fr; }
-      .icon-row { gap: 2rem; font-size: 2.6rem; }
-      .circle { width: 230px; height: 230px; }
-      .button { width: 100%; }
-      .button-row { flex-direction: column; }
+      .image.circle {
+        height: 16rem;
+      }
     }
   </style>
 </head>
 <body>
-  <section class="hero" id="home">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <h1>AI Walk-to-Earn Harlem</h1>
-        <p class="subtitle">
-          A proposal website for an AI-supported pedestrian plaza redesign that rewards walking,
-          confirms landmark visits, and helps local businesses grow.
-        </p>
-        <div class="button-row">
-          <a class="button primary" href="#about">⬇ <span>Explore Proposal</span></a>
-          <a class="button secondary" href="#final-proposal">⌄ <span>Final Proposal</span></a>
+  <div class="wrapper">
+    <section id="header">
+      <div class="inner">
+        <div class="content">
+          <h1>AI Walk-to-Earn Harlem</h1>
+          <p>A redesign proposal for a Harlem pedestrian plaza that uses AI, walking routes, and landmark QR checkpoints to increase activity and support local businesses.</p>
+          <ul class="actions">
+            <li><a href="#about" class="button primary">Explore Proposal</a></li>
+            <li><a href="#final-proposal" class="button secondary">Final Proposal</a></li>
+          </ul>
         </div>
-      </div>
-      <div class="phone-wrap">
-        <div class="phone">
+
+        <div class="phone-shell" aria-label="App concept preview">
           <div class="phone-screen">
-            <div>
-              <strong>Walk Progress</strong>
-              <p>Route: Plaza Loop A</p>
-              <p>Time Walked: 12 min</p>
+            <div class="app-top">
+              <div class="mini">Walk Session Active</div>
+              <strong>Harlem Plaza Route</strong>
             </div>
-
-            <div class="phone-card">
-              <strong>Checkpoint Nearby</strong>
-              <span>Walk 2 min → Scan QR at Coffee Shop Landmark</span>
+            <div class="app-map">
+              <div class="route-box">
+                <div class="route-line"></div>
+                <div class="dot"></div>
+                <div class="qr"></div>
+              </div>
+              <div class="stats">
+                <div class="stat"><strong>12 min</strong>walk verified</div>
+                <div class="stat"><strong>1 stop left</strong>to checkpoint</div>
+              </div>
             </div>
-
-            <div class="phone-card">
-              <strong>Reward</strong>
-              <span>Free drink coupon unlocked after scan</span>
+            <div class="reward-bar">
+              <strong>Next Landmark</strong>
+              Scan QR near a local business to unlock a food or discount reward.
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel alt" id="about">
+      <div class="container">
+        <header class="major">
+          <h2>Project Overview</h2>
+          <p>This proposal website presents a redesign concept based on <strong>AI Walk-to-Earn Harlem</strong>, where walking in the plaza becomes a verified, rewarded, and community-supporting activity.</p>
+        </header>
+        <ul class="icons" aria-hidden="true">
+          <li>◫</li>
+          <li>⟳</li>
+          <li>☁</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel" id="overview-details">
+      <div class="container">
+        <div class="spotlight">
+          <div class="image circle one"></div>
+          <div class="text">
+            <h3>About the Project</h3>
+            <p><strong>Project Title:</strong> AI Walk-to-Earn Harlem: Incentivizing Pedestrian Activity in the Harlem Plaza.</p>
+            <p><strong>Project Goal:</strong> To design a proposal for a smart pedestrian experience that encourages walking, verifies landmark visits, and connects activity in the plaza to rewards from local businesses.</p>
+            <p><strong>Essential Question:</strong> How can artificial intelligence encourage people to walk more while supporting local businesses in a pedestrian plaza?</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section alt" id="about">
-    <div class="container">
-      <div class="center-intro">
-        <h2>AI can help transform a pedestrian plaza into a safer, healthier, and more active community space.</h2>
-        <div class="divider"></div>
-        <p>
-          This project proposal is based on <strong>AI Walk-to-Earn Harlem</strong>, a redesign concept that uses route verification,
-          landmark QR checkpoints, and rewards from nearby businesses to encourage more walking in the Harlem plaza.
-        </p>
-      </div>
-      <div class="icon-row" aria-hidden="true">
-        <span>◫</span>
-        <span>⟳</span>
-        <span>☁</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="problem">
-    <div class="container split">
-      <div class="circle img-1" aria-label="Proposal illustration"></div>
-      <div class="content">
-        <h3>About the Project</h3>
-        <p><strong>Project Title:</strong> AI Walk-to-Earn Harlem: Incentivizing Pedestrian Activity in the Harlem Plaza.</p>
-        <p><strong>Project Goal:</strong> Design a proposal for a smart plaza experience that motivates people to walk along safe routes, interact with landmark checkpoints, and receive incentives from local businesses.</p>
-        <p><strong>Essential Question:</strong> How can artificial intelligence encourage people to walk more while supporting local businesses in a pedestrian plaza?</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="the-problem">
-    <div class="container split reverse">
-      <div class="content">
-        <h3>The Problem</h3>
-        <p>
-          Many pedestrian plazas struggle with low engagement, uneven business activity, weak incentives for exploration,
-          and safety concerns when spaces feel underused. Without a system that connects walking behavior to visible rewards,
-          the plaza can remain inactive and disconnected from nearby businesses.
-        </p>
-        <p>
-          This redesign proposal addresses that problem by turning movement into a meaningful activity: users walk, verify progress,
-          scan a landmark code near businesses, and receive rewards tied to real participation.
-        </p>
-      </div>
-      <div class="circle">Space for problem graphic or site condition image</div>
-    </div>
-  </section>
-
-  <section class="section" id="site-context">
-    <div class="container split">
-      <div class="circle img-2" aria-label="Context image"></div>
-      <div class="content">
-        <h3>Site / Context</h3>
-        <p>
-          The Harlem plaza redesign focuses on how people move, where they pause, what feels safe, and how local businesses can benefit from foot traffic.
-          Key site understanding areas include movement patterns, comfort, safety, accessibility, and business activity.
-        </p>
-        <p>
-          The proposal assumes that landmarks can be placed strategically near stores, food spots, and gathering points so users are guided through the plaza instead of passing through it without engaging.
-        </p>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="hr"></div>
-      <div class="feature-grid">
-        <div class="feature"><span>◫</span><span>Movement analysis</span></div>
-        <div class="feature"><span>⟳</span><span>Use patterns</span></div>
-        <div class="feature"><span>☁</span><span>Comfort + shade</span></div>
-        <div class="feature"><span>&lt;/&gt;</span><span>Accessibility routes</span></div>
-        <div class="feature"><span>▭</span><span>Business activity</span></div>
-        <div class="feature"><span>◎</span><span>Safety checkpoints</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="design-options">
-    <div class="container">
-      <div class="center-intro">
-        <h2>Design Options</h2>
-        <p>
-          Before selecting the final direction, the redesign considers multiple ways AI and pedestrian engagement could work together in the plaza.
-        </p>
-      </div>
-      <div class="options">
-        <div class="card">
-          <h4>Option 1: Route Rewards</h4>
-          <p>Users earn rewards only by walking verified safe routes. This improves movement but has limited proof of business interaction.</p>
-        </div>
-        <div class="card">
-          <h4>Option 2: Business Check-In Model</h4>
-          <p>Users receive rewards when arriving near stores. This supports businesses but depends too heavily on location data alone.</p>
-        </div>
-        <div class="card">
-          <h4>Option 3: Landmark + QR Confirmation</h4>
-          <p>Users walk, reach a public landmark near a business, and scan a code for confirmation. This creates stronger proof of real visits and a more engaging plaza journey.</p>
+    <section class="panel alt" id="problem">
+      <div class="container">
+        <div class="spotlight reverse">
+          <div class="image circle">Space for a site problem image or existing plaza condition photo</div>
+          <div class="text">
+            <h3>The Problem</h3>
+            <p>Many pedestrian plazas struggle with low engagement, limited incentives to explore, safety concerns in underused spaces, and weak connections between foot traffic and nearby businesses.</p>
+            <p>This redesign responds to a real-world problem: people may pass through a plaza without interacting with it, and businesses nearby may not benefit from pedestrian movement. The proposal tries to solve that by making walking purposeful, verified, and rewarding.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="final-proposal">
-    <div class="container">
-      <div class="center-intro">
-        <h2>Final Redesign Proposal</h2>
-        <p>
-          The selected proposal combines AI walking detection, GPS route verification, and landmark QR scanning to create a realistic walk-to-earn experience in Harlem.
-        </p>
-      </div>
-
-      <div class="proposal-grid">
-        <div class="image-slot">Place AI-generated redesign visual here</div>
-        <div class="image-slot">Place AI-generated landmark checkpoint visual here</div>
-        <div class="image-slot">Place app interface / route verification visual here</div>
-        <div class="image-slot">Place business reward / plaza activity visual here</div>
-      </div>
-
-      <div style="margin-top: 2rem;">
-        <p>
-          In the final proposal, landmarks are placed strategically near local businesses and important decision points in the plaza.
-          Pedestrians follow suggested routes, scan a QR code at each landmark, and receive verified progress toward coupons, points, or small food rewards.
-        </p>
-        <p>
-          This approach is justified because it improves verification, increases interaction with the environment, creates stronger support for local businesses,
-          and gives the plaza a more active identity through visible checkpoints and guided movement.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="reflection">
-    <div class="container">
-      <div class="cta">
-        <h2>Reflection / Conclusion</h2>
-        <p>
-          AI helped generate ideas, structure the proposal, imagine redesign visuals, and organize how walking, landmarks, and rewards could work together.
-          Human judgment was still necessary to decide what was realistic for Harlem, what felt safe and accessible, where landmarks should be placed,
-          and which final proposal best served community needs.
-        </p>
-      </div>
-      <div class="options" style="margin-top: 2.5rem;">
-        <div class="card">
-          <h4>What AI Helped With</h4>
-          <ul class="clean">
-            <li>Generating concept directions</li>
-            <li>Suggesting plaza redesign visuals</li>
-            <li>Structuring route and reward ideas</li>
-            <li>Supporting presentation language</li>
-          </ul>
+    <section class="panel" id="site-context">
+      <div class="container">
+        <div class="spotlight">
+          <div class="image circle two"></div>
+          <div class="text">
+            <h3>Site / Context</h3>
+            <p>The site analysis focuses on how people move through the Harlem plaza, where they feel comfortable stopping, how safe and accessible the routes are, and where business activity is strongest.</p>
+            <p>This proposal assumes landmarks can be placed at strategic points near businesses, seating zones, and high-visibility areas so the plaza supports both community movement and economic activity.</p>
+          </div>
         </div>
-        <div class="card">
-          <h4>What Required Human Judgment</h4>
-          <ul class="clean">
-            <li>Choosing the final redesign</li>
-            <li>Considering safety and accessibility</li>
-            <li>Matching ideas to local business needs</li>
-            <li>Evaluating what is realistic and useful</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h4>Conclusion</h4>
-          <p>
-            The proposal shows that a pedestrian plaza can become more engaging when walking is connected to landmarks,
-            rewards, and thoughtful AI support instead of passive movement alone.
-          </p>
+
+        <div class="features">
+          <div class="feature"><span class="sym">◫</span><span>Movement patterns</span></div>
+          <div class="feature"><span class="sym">⟳</span><span>Use and circulation</span></div>
+          <div class="feature"><span class="sym">☁</span><span>Comfort and pause areas</span></div>
+          <div class="feature"><span class="sym">◎</span><span>Safety checkpoints</span></div>
+          <div class="feature"><span class="sym">▭</span><span>Business activity</span></div>
+          <div class="feature"><span class="sym">⌘</span><span>Accessibility routes</span></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#about">About the Project</a>
-      <a href="#the-problem">The Problem</a>
-      <a href="#site-context">Site / Context</a>
-      <a href="#design-options">Design Options</a>
-      <a href="#final-proposal">Final Proposal</a>
-      <a href="#reflection">Reflection / Conclusion</a>
-    </div>
-    <div>Proposal website inspired by the structure of the Fractal template and customized for the AI Walk-to-Earn Harlem redesign concept.</div>
-  </footer>
+    <section class="panel alt" id="design-options">
+      <div class="container">
+        <header class="major">
+          <h2>Design Options</h2>
+          <p>Different proposal directions were considered before selecting the final redesign concept.</p>
+        </header>
+        <div class="cards">
+          <article class="card">
+            <h4>Option 1: Route Reward Model</h4>
+            <p>Users earn incentives for completing verified walking routes. This improves movement but gives limited proof that users interacted with businesses or landmarks.</p>
+          </article>
+          <article class="card">
+            <h4>Option 2: Business Check-In Model</h4>
+            <p>Users receive rewards by arriving near businesses. This supports local stores, but location alone may not confirm true participation in the plaza experience.</p>
+          </article>
+          <article class="card">
+            <h4>Option 3: Landmark QR Proposal</h4>
+            <p>Users walk a suggested route, stop at a plaza landmark, and scan a QR code placed near a business. This creates stronger confirmation, more engagement, and a clearer redesign identity.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="final-proposal">
+      <div class="container">
+        <header class="major">
+          <h2>Final Proposal</h2>
+          <p>The selected redesign combines AI walking verification, route guidance, and landmark QR checkpoints to create a more active and community-connected pedestrian plaza.</p>
+        </header>
+
+        <div class="proposal-images">
+          <div class="placeholder">Place AI-generated redesign image here</div>
+          <div class="placeholder">Place AI-generated landmark checkpoint image here</div>
+          <div class="placeholder">Place AI-generated app interface image here</div>
+          <div class="placeholder">Place AI-generated plaza and business activity image here</div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <p>In the final redesign proposal, pedestrians follow safe routes through the plaza, arrive at landmarks placed near local businesses, and scan a QR code for visit confirmation. After the scan, the user can unlock coupons, discounts, points, or food rewards.</p>
+          <p>This proposal is justified because it creates stronger proof of real engagement, encourages people to explore more of the plaza, supports local businesses directly, and gives the site a more visible and interactive identity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel alt" id="reflection">
+      <div class="container">
+        <header class="major">
+          <h2>Reflection / Conclusion</h2>
+          <p>This redesign proposal shows how AI can support a stronger pedestrian experience, but it also shows where human decision-making still matters.</p>
+        </header>
+
+        <div class="columns">
+          <div class="box">
+            <h4>What AI Helped With</h4>
+            <ul class="clean">
+              <li>Generating redesign ideas</li>
+              <li>Imagining proposal visuals</li>
+              <li>Organizing route and reward concepts</li>
+              <li>Supporting the structure of the proposal</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>What Required Human Judgment</h4>
+            <ul class="clean">
+              <li>Choosing the final redesign direction</li>
+              <li>Deciding what is realistic for Harlem</li>
+              <li>Evaluating safety and accessibility</li>
+              <li>Determining how landmarks support businesses</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>Conclusion</h4>
+            <p>The final proposal turns walking into a visible community activity by connecting movement, AI verification, landmarks, and local rewards in one redesign concept for the plaza.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="nav">
+        <a href="#header">Home</a>
+        <a href="#about">About the Project</a>
+        <a href="#problem">The Problem</a>
+        <a href="#site-context">Site / Context</a>
+        <a href="#design-options">Design Options</a>
+        <a href="#final-proposal">Final Proposal</a>
+        <a href="#reflection">Reflection / Conclusion</a>
+      </div>
+      <div>Proposal website styled to closely match the Fractal template structure while presenting the AI Walk-to-Earn Harlem redesign proposal.</div>
+    </footer>
+  </div>
 </body>
 </html>
