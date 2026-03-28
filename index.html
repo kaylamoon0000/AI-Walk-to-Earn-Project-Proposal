@@ -51,10 +51,21 @@
       overflow: hidden;
       position: relative;
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.10) 0, rgba(255,255,255,0.10) 1px, transparent 1px, transparent 18%),
-        linear-gradient(135deg, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 25%),
+        repeating-linear-gradient(
+          135deg,
+          rgba(255,255,255,0.08) 0px,
+          rgba(255,255,255,0.08) 2px,
+          transparent 2px,
+          transparent 40px
+        ),
+        repeating-linear-gradient(
+          135deg,
+          rgba(255,255,255,0.05) 0px,
+          rgba(255,255,255,0.05) 1px,
+          transparent 1px,
+          transparent 60px
+        ),
         linear-gradient(135deg, var(--blue-1), var(--blue-2) 48%, var(--blue-3));
-      background-size: 220px 220px, 320px 320px, cover;
       color: white;
     }
 
@@ -164,22 +175,21 @@
     .phone-screen {
       width: 100%;
       height: 100%;
-      background:
-        linear-gradient(rgba(18, 36, 58, 0.34), rgba(18, 36, 58, 0.34)),
-        url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80') center/cover;
+      background: linear-gradient(180deg, #1e3c5a, #12273d);
       display: flex;
-      align-items: flex-end;
-      padding: 1.1rem;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
       color: white;
+      font-size: 0.9rem;
     }
 
     .phone-card {
       width: 100%;
-      background: rgba(255,255,255,0.14);
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 14px;
-      padding: 1rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 0.75rem;
+      font-size: 0.85rem;
     }
 
     .phone-card strong {
@@ -447,10 +457,22 @@
       <div class="phone-wrap">
         <div class="phone">
           <div class="phone-screen">
-            <div class="phone-card">
-              <strong>Landmark Checkpoint</strong>
-              <span>Walk to a plaza landmark, scan the code, and unlock a business reward.</span>
+            <div>
+              <strong>Walk Progress</strong>
+              <p>Route: Plaza Loop A</p>
+              <p>Time Walked: 12 min</p>
             </div>
+
+            <div class="phone-card">
+              <strong>Checkpoint Nearby</strong>
+              <span>Walk 2 min → Scan QR at Coffee Shop Landmark</span>
+            </div>
+
+            <div class="phone-card">
+              <strong>Reward</strong>
+              <span>Free drink coupon unlocked after scan</span>
+            </div>
+          </div>
           </div>
         </div>
       </div>
